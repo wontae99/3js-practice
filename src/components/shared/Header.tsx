@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
  */
 const nav = [
   {
-    name: "Transformation",
+    name: "Practice",
     path: "/",
   },
   {

@@ -8,7 +8,7 @@ type Props = {};
 
 const materialPage = (props: Props) => {
   return (
-    <main className="w-full h-full p-12">
+    <main className="w-full h-[80vh]">
       <h2 className="font-bold text-xl">Mesh Standard Material</h2>
       <div className="flex flex-col w-full h-2/3 bg-black">
         <Canvas

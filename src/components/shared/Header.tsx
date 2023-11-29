@@ -19,6 +19,22 @@ const nav = [
     name: "Material",
     path: "/material",
   },
+  {
+    name: "Light",
+    path: "/light",
+  },
+  {
+    name: "Camera",
+    path: "/camera",
+  },
+  {
+    name: "Shadow",
+    path: "/shadow",
+  },
+  {
+    name: "Animation",
+    path: "/animation",
+  },
 ];
 
 const ALink = ({ href, title }: { href: string; title: string }) => {
@@ -42,7 +58,7 @@ const ALink = ({ href, title }: { href: string; title: string }) => {
 export default function Header() {
   return (
     <header className="mx-auto max-w-3xl pb-10">
-      <nav className="flex flex-wrap items-center gap-4 p-4">
+      <nav className="flex flex-wrap items-center gap-4">
         {nav.map((item, index) => (
           <ALink href={item.path} title={item.name} key={index} />
         ))}

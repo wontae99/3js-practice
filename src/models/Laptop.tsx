@@ -1,31 +1,36 @@
-import {
-  Environment,
-  Html,
-  useGLTF,
-} from "@react-three/drei";
-import React from "react";
+import { Environment, Html, useGLTF } from "@react-three/drei";
+import * as THREE from "three";
+import React, { useRef, useEffect } from "react";
 
 type Props = {};
 
 const Laptop = (props: Props) => {
-  const laptop = useGLTF(
-    "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
-  );
+  const laptop = useGLTF("./3d/laptop.glb");
+  const modelRef = useRef<THREE.Group>(null!);
+
+  useEffect(() => {
+    if (modelRef.current) {
+      modelRef.current.scale.set(0.12, 0.12, 0.12);
+    }
+  }, []);
 
   return (
     <>
       <Environment preset="warehouse" />
 
-      <primitive object={laptop.scene} position-y={-1.2}>
+      <primitive ref={modelRef} object={laptop.scene} position-y={-0.8}>
         <Html
           wrapperClass="laptop"
-          position={[-0.25, 1.9, -1.5]}
+          position={[-2.1, 13.3, -10]}
           transform
-          distanceFactor={4}
-          rotation-x={-0.25}
-          scale-y={1.2}
+          distanceFactor={10}
+          scale={3.9}
+          scale-y={4.6}
         >
-          <iframe src="https://wontae99.vercel.app" />
+          <iframe
+            className="w-[1024px] h-[670px] border-none rounded-2xl"
+            src="https://wontae99.vercel.app"
+          />
         </Html>
       </primitive>
     </>
